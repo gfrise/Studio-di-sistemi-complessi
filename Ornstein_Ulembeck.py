@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Compito 1: create_OU.c
-# Create un codice che simuli un processo di Ornstein-Uhlenbeck a partire dalla sua equazione di Langevin. 
+# processo di Ornstein-Uhlenbeck a partire dalla sua equazione di Langevin. 
 # Il codice deve anche prevedere la costruzione della funzione densità di probabilità (area normalizzata ad 1) 
 # e della funzione di autocorrelazione. Fate in modo che i parametri rilevanti della simulazione siano inseriti dall’esterno, 
 # per esempio tramite lettura da un file che contenga tutti i parametri. 
@@ -54,7 +54,7 @@ import matplotlib.pyplot as plt
 # - Utilizzare una libreria esterna per la generazione di numeri casuali, se necessario
 # - Separare il codice in funzioni modulari: lettura parametri, simulazione, analisi, output
 
-tt = 10**4
+tt = 10**2
 step = 100
 dt = 1/step
 tauM = 50
@@ -121,3 +121,5 @@ for t in range(tauM):
 x = np.linspace(0,tauM,50)
 plt.semilogx(x, med, '.', c='black')
 plt.errorbar(x, med, yerr=sd)
+plt.plot(x)
+plt.show()

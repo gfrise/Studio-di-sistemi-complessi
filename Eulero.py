@@ -28,7 +28,7 @@ Il termine extra migliora la precisione, specialmente quando h(x) varia rapidame
 import numpy as np
 import matplotlib.pyplot as plt
 
-# -------------------- Definizione SDE --------------------
+ -------------------- Definizione SDE --------------------
 def h(x):
     """Deriva (drift)"""
     return -x

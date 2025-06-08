@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 # --- Parametri ---
 gamma1 = 0.1
 dt     = 0.01
-NN     = 10_000_000
+NN     = 100_000
 step   = 10
 # Generico tau_max “in tempo discreto”; verrà limitato dentro la funzione
 tau_max = 200  

@@ -1,15 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-# === PARAMETRI DELLA SIMULAZIONE (inseriti direttamente) ===
 gamma = 1.0     # coefficiente di ritorno verso la media
 enne = 100      # punti per unità di tempo
 x0 = 0.0        # valore iniziale
 nR = 1000       # numero di punti nella serie sottocampionata
 nbin = 50       # numero di bin per l'istogramma
 tmax = 100      # lag massimo per l'autocorrelazione
-
-# === DERIVATI ===
 dt = 1.0 / enne
 N = int(nR * enne)  # numero di punti totali simulati
 
@@ -19,8 +16,8 @@ X = np.empty(N)
 X[0] = x0
 
 for i in range(1, N):
-    noise = np.random.randn() * np.sqrt(2 * gamma * dt)
-    X[i] = X[i-1] - gamma * X[i-1] * dt + noise
+    noise = np.random.randn()*np.sqrt(2*gamma*dt)
+    X[i] = X[i-1]-gamma*X[i-1]*dt+noise
 
 # === SOTTOCAMPIONAMENTO (un punto ogni unità di tempo) ===
 y = X[::enne]
