@@ -1,9 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt 
 
-t, n, tauM, m, gamma = 10**4, 100, 50, 100, 0.1
+t, n, tauM, m, gamma = 10**4, 100, 50, 100, 0.1 #n:= punti per t unitario
 dt, N, sum_ac, sum_ac2 = 1/n, n*t, np.zeros(tauM), np.zeros(tauM)
 
+#    noise = np.random.randn()*np.sqrt(2*gamma*dt)
 def OU():
     x = np.zeros(N)
     x[0]=0.1
