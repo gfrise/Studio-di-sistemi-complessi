@@ -85,9 +85,7 @@ def plot_and_save(center, h_mean, h_std, ac_mean, ac_std, dt, title, out_prefix)
     plt.tight_layout()
     plt.show()
 
-    with open(f'{out_prefix}_autocorr.dat', 'w') as f:
-        for i in range(len(ac_mean)):
-            f.write(f"{i}\t{ac_mean[i]:.6e}\t{ac_std[i]:.6e}\n")
+    
 
 
 def main():
