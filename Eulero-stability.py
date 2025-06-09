@@ -36,7 +36,8 @@ def simulate_ou_euler(lam, sigma, dt, N, x0):
     return X
 
 # Preallocazione per statistiche
-mean_ensemble = np.zeros(N)\mean_sq_ensemble = np.zeros(N)
+mean_ensemble = np.zeros(N)
+mean_sq_ensemble = np.zeros(N)
 
 # Ensemble Monte Carlo
 def run_ensemble():
