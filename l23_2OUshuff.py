@@ -25,7 +25,7 @@ import matplotlib.pyplot as plt
 # --- Parametri comuni ---
 enne = 100        # punti/unità di tempo
 dt = 1.0/enne
-nR = 1000
+nR = 10000
 nbin = 50
 tmax = 200
 x0 = 0.0
