@@ -2,6 +2,21 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+# Compito OU:
+#   - Processo Ornstein-Uhlenbeck via Langevin
+#   - Generazione rumore gaussiano
+#   - Shuffling preservando la PDF
+#   - Statistiche base, PDF e autocorrelazione
+
+# Compito RISK:
+#   - Processo "RISK" (drift ±kappa a seconda del segno)
+#   - Generazione rumore gaussiano
+#   - Shuffling, statistiche, PDF, autocorrelazione
+
+# Compito Wiener:
+#   - Moto Browniano (processo di Wiener)
+#   - PDF e varianza in funzione del tempo
+
 h = lambda x : -2.*x
 h1 = lambda x : -2.
 g = lambda x : 1.
@@ -59,6 +74,24 @@ def ensemble():
     mean_ens[:]/=m
     mean2_ens[:]/=m
 
+###
+# Simula Wiener
+Z_w = np.random.default_rng(42).normal(0, np.sqrt(dt), N)
+X_wiener = np.zeros(N)
+X_wiener[0] = 0.1
+for i in range(1, N):
+    X_wiener[i] = X_wiener[i-1] + Z_w[i]
+####
+# Funzione autocorrelazione
+def autocorr(x, maxlag):
+    N = len(x)
+    m = x.mean()
+    sd = np.sqrt(((x-m)**2).mean())
+    corr = []
+    for t in range(maxlag):
+        num = ((x[:N-t]-m)*(x[t:]-m)).sum()/(N-t)
+        corr.append(num/(sd*sd))
+    return np.array(corr)
 ###
 
 for _ in range(m):
