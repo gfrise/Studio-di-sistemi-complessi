@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import random
 
 h = lambda x : -2.*x
 h1 = lambda x : -2.
@@ -36,6 +37,11 @@ def AC(x,t):
         x1,x2=x[:-t],x[t:]
     return np.mean((x1*x2)-np.mean(x1)*np.mean(x2))/(np.std(x1)*np.std(x2))
 
+def shuffle(x):
+    for i in range(N):
+        y = i + random.randint(0,N-i-1)#rand()%(N-i)
+        x[i],x[y] = x[y], x[i]
+
 ####
 
 def AC2(x):
@@ -57,6 +63,7 @@ def ensemble():
 
 for _ in range(m):
     x = OU(0)
+    shuffle(x)
     sample = x[::n]
     for t in range(taum):
         a = AC(sample,t)

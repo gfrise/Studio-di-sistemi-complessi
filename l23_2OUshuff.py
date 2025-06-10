@@ -48,6 +48,12 @@ def autocorr(x, maxlag):
         corr.append(num/(sd*sd))
     return np.array(corr)
 
+def autocorrelation(x, tmax):
+    x -= x.mean()
+    result = np.correlate(x, x, mode='full')
+    acf = result[result.size // 2:] / result[result.size // 2]
+    return acf[:tmax]
+
 # Compito OU
 def simulate_ou():
     rng = np.random.default_rng(seed_ou)
@@ -92,6 +98,13 @@ def simulate_wiener():
     var_t = W.reshape(nR, enne).var(axis=0)
     stats = Ws.mean(), Ws.std(), Ws.min(), Ws.max()
     return Ws, stats, pdf, bins, var_t
+
+# Simula Wiener
+Z_w = np.random.default_rng(seed_wiener).normal(0, np.sqrt(dt), N)
+X_wiener = np.zeros(N)
+X_wiener[0] = x0
+for i in range(1, N):
+    X_wiener[i] = X_wiener[i-1] + Z_w[i]
 
 # Esecuzione e visualizzazione
 def main():
