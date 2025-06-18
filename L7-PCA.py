@@ -1,32 +1,3 @@
-# import numpy as np
-# import matplotlib.pyplot as plt
-
-# # Dati di esempio (100×5)
-# X = np.random.rand(50, 5)
-
-# # 1) Centraggio
-# Xc = X - X.mean(axis=0)
-
-# # 2) PCA via SVD
-# U, S, Vt = np.linalg.svd(Xc, full_matrices=False)
-# Z = Xc.dot(Vt.T)            # score matrix
-# # 3) Matrice di correlazione delle feature
-# corr = np.corrcoef(Xc, rowvar=False)
-
-# # 4) Plot: scores + heatmap correlazione
-# fig, (ax0, ax1) = plt.subplots(1, 2, figsize=(8,4))
-
-# # a) Scatter PC1 vs PC2
-# ax0.scatter(Z[:,0], Z[:,1], edgecolor='k', alpha=0.7)
-# ax0.set(xlabel='PC1', ylabel='PC2', title='PCA scores')
-
-# # b) Heatmap matrice di correlazione
-# im = ax1.imshow(corr, aspect='auto', cmap='viridis', vmin=-1, vmax=1)
-# ax1.set(title='Correlation matrix', xlabel='Feature', ylabel='Feature')
-# fig.colorbar(im, ax=ax1, fraction=0.046)
-
-# plt.tight_layout()
-# plt.show()
 import numpy as np
 import matplotlib.pyplot as plt
 
