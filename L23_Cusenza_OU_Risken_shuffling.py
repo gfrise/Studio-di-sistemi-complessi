@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
-N = 10**3
+N = 10**4
 step = 100
 dLag = 1/step
 lagMax = 50
