@@ -2,6 +2,61 @@ import numpy as np
 import matplotlib.pyplot as plt
 import random
 
+# processo di Ornstein-Uhlenbeck a partire dalla sua equazione di Langevin.  
+# costruzione della pdf (area normalizzata ad 1) e funzione di autocorrelazione
+# i parametri rilevanti della simulazione tramite file 
+# Iterate il processo M = 100 volte e costruite l’istogramma e 
+# l’autocorrelazione mediati su queste M iterazioni,
+# mostrando la standard deviation come barra d’errore.
+
+
+# Compito 2: create_RISKEN.c
+
+# Create un codice che simuli il processo multiscala definito dal seguente coefficiente di drift:
+
+#     b(x) =
+#         +k   se x > 0
+#         -k   se x < 0
+
+# Il processo è descritto dalla seguente equazione stocastica differenziale (SDE):
+
+#     $$ dX_t = b(X_t) \, dt + \sigma \, dW_t $$
+
+# Dove:
+# - b(x) è definito a tratti come sopra,
+# - σ (sigma) è l’intensità del rumore bianco,
+# - W_t è un moto browniano standard.
+
+# Richieste:
+# 1. Implementare un’integrazione numerica del processo usando lo schema di Eulero–Maruyama.
+# 2. Fare in modo che tutti i parametri rilevanti (k, σ, Δt, N, M, ecc.) siano letti da un file esterno
+#    oppure passati da linea di comando.
+#    - k: intensità del drift
+#    - σ: intensità del rumore
+#    - Δt: passo temporale
+#    - N: numero di passi temporali per traiettoria
+#    - M: numero di iterazioni (traiettorie da simulare)
+
+# 3. Iterare la simulazione M volte e, per ciascuna:
+#    - Generare una traiettoria del processo X(t)
+#    - Salvare i dati delle traiettorie su file (opzionale)
+
+# 4. Calcolare:
+#    - L'istogramma della densità di probabilità stazionaria (area normalizzata a 1)
+#    - La funzione di autocorrelazione del processo
+#    - La media e la deviazione standard delle quantità sopra, calcolate su M traiettorie
+
+# 5. Visualizzazione:
+#    - Mostrare i risultati con barre d’errore corrispondenti alla deviazione standard
+
+# Suggerimenti:
+# - Usare strutture dati dinamiche o array allocati in modo efficiente per gestire i dati
+# - Utilizzare una libreria esterna per la generazione di numeri casuali, se necessario
+# - Separare il codice in funzioni modulari: lettura parametri, simulazione, analisi, output
+
+#
+
+
 # Compito OU:
 #   - Processo Ornstein-Uhlenbeck via Langevin
 #   - Generazione rumore gaussiano
@@ -58,6 +113,21 @@ def shuffle(x):
         x[i],x[y] = x[y], x[i]
 
 ####
+
+# def OU2(n,sigma,dt,y):
+#     x = np.empty(n)
+#     x[0] = 0.1
+    
+#     g1, g2 = np.random.normal(0,1,100), np.random.normal(0,1,100)
+#     z1 = sigma*np.sqrt(dt)*g1
+#     z2 = sigma*(g1/2 + g2/(2*np.sqrt(3)))*(dt**1.5)
+#     ydt = y*dt
+
+#     for i in range(1,n):
+#         x[i] = x[i-1]*(1-ydt+0.5*ydt**2) + z1[i-1] - y*z2[i-1] 
+    
+#     return x
+
 
 def AC2(x):
     acf = np.zeros(taum)
