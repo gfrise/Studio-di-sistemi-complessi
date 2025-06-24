@@ -120,7 +120,7 @@ def shuffle(x):
     
 #     g1, g2 = np.random.normal(0,1,100), np.random.normal(0,1,100)
 #     z1 = sigma*np.sqrt(dt)*g1
-#     z2 = sigma*(g1/2 + g2/(2*np.sqrt(3)))*(dt**1.5)
+#     z2 = sigma*(g1/2 + g2/(2*np.sqrt(3)))*(dt**1.5) // senza sigm probabilmente
 #     ydt = y*dt
 
 #     for i in range(1,n):
