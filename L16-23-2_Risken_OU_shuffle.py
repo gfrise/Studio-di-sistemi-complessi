@@ -113,7 +113,6 @@ def shuffle(x):
         x[i],x[y] = x[y], x[i]
 
 ####
-
 # def OU2(n,sigma,dt,y):
 #     x = np.empty(n)
 #     x[0] = 0.1
