@@ -1,6 +1,6 @@
 import numpy as np, matplotlib.pyplot as plt
 
-num_samples, sample_size, mu, sd = 10000, 10**5, 3, 0.4
+num_samples, sample_size, mu, sd = 10**4, 10**4, 3, 0.4
 sample_means = np.zeros(num_samples)
 
 for i in range(num_samples):
