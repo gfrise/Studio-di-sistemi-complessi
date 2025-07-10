@@ -5,7 +5,7 @@ sample_size = 10000
 mu = 3
 # CASO 2: t-Student diretta
 scale = 0.4 #scala tstudent
-df = 5  # gradi di libertà
+df = 1  # gradi di libertà
 sample_means2 = np.zeros(num_samples)
 
 # Formula: sd_theoretical = scale * sqrt(df / (df - 2)), valida solo per df > 2
