@@ -42,16 +42,6 @@ dt, n, means, sd = 1/step, t*step, np.zeros(taum), np.zeros(taum)
 # plt.title('Ornstein-Uhlenbeck Autocorrelation')
 # plt.show()
 
-#  m1=0.;
-#   sd1=0.;
-#   for(j=0; j<nR-tmax;j++){
-#      m1=m1+X[j];
-#      sd1=sd1+pow(X[j],2.);
-#   }
-#   m1=m1/(double)(nR-tmax);
-#   sd1=(sd1/(double)(nR-tmax))-pow(m1,2.);
-#   sd1=pow(sd1,0.5);
-  
 #   for(t=0;t<tmax;t++){
 #      m2=0.;
 #      sd2=0.;
