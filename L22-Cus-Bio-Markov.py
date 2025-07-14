@@ -31,7 +31,7 @@ for i in range(len(x)):
 n = 4
 L = np.array([0, 1, 2, 3])
 
-mat2 = np.zeros((n, n))  # Matrice congiunta
+mat2 = np.zeros((n, n)) # Matrice congiunta
 
 for k in range(len(x) - 1):
     i = x[k]
