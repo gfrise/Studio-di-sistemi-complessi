@@ -52,7 +52,7 @@ state_counts = conf_mat.sum(axis=1)  # Totale occorrenze per ogni stato reale
 correct_preds = np.diag(conf_mat)    # Predizioni corrette (diagonale)
 per_state_accuracy = correct_preds / state_counts
 
-print("Accuratezza per stato:")
+print("Accuratezza per stato:") 
 for i, acc in enumerate(per_state_accuracy):
     print(f"  {state_names[i]}: {acc:.4f} ({correct_preds[i]}/{state_counts[i]})")
 
