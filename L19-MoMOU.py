@@ -19,7 +19,8 @@
 # 	     Z1[i]=m+(double) sqrt(s)*gam;
 # 	  }
 #     }
-
+ 
+ 
 #   double *delXs,*Xs;
 #   delXs=allocamem1(staz*nR*enne);
 #   Xs=allocamem1(staz*nR*enne);
