@@ -33,6 +33,7 @@ def log_add_exp(a, b):
 def forward_log(O, pi_log, A_log, B_log):
     T = len(O) - 1
     N = A_log.shape[0]
+    
     alpha = np.full((T, N), -np.inf)
 
     # inizializzazione
